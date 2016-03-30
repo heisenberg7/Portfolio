@@ -63,7 +63,7 @@
     <div class="jumbotron">
         <h1>Welcome !</h1>
         <p class="lead">Bienvenue sur mon site perso qui vous présentera mes réalisations et vous donneras mes références. N'hésitez pas à me contacter via la partie contact pour plus d'infos me concernant ou au sujet de mes projets. Bonne visite !</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">+ d'infos ?</a></p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">en savoir +</a></p>
     </div>
 
     <!-- Example row of columns -->
