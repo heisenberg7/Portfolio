@@ -88,7 +88,7 @@
 
     <!-- Site footer -->
     <footer class="footer">
-        <p>&copy; 2015 Company, Inc.</p>
+        <p>&copy; 2016. Florent AYMARD RUBY</p>
     </footer>
 
 </div> <!-- /container -->

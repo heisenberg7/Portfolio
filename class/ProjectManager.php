@@ -32,7 +32,7 @@ class ProjectManager
     }
 
     public function get($id){
-        $id =(int) $id();
+        $id = (int) $id;
 
         $req = $this->_db->query('SELECT id, name, description, details FROM project WHERE id = .$id');
         $data = $req->fetch(PDO::FETCH_ASSOC);

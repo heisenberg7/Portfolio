@@ -6,6 +6,8 @@
  * Time: 15:30
  */
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +24,13 @@
     <title>Florent AYMARD RUBY - Portfolio</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="src/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="src/css/justified-nav.css" rel="stylesheet">
+    <link href="../src/css/justified-nav.css" rel="stylesheet">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -56,11 +58,11 @@
         </nav>
     </div>
 
-    ici on affichera les projets
+    <p>ici on affichera les projets</p>
 
     <!-- Site footer -->
     <footer class="footer">
-        <p>&copy; 2015 Company, Inc.</p>
+        <p>&copy; 2016. Florent AYMARD RUBY</p>
     </footer>
 
 </div> <!-- /container -->
