@@ -20,18 +20,18 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="src/img/favicon.png">
+    <link rel="icon" href="../src/img/favicon.png">
 
     <title>Florent AYMARD RUBY - Portfolio</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="src/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="src/css/justified-nav.css" rel="stylesheet">
+    <link href="../src/css/justified-nav.css" rel="stylesheet">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
