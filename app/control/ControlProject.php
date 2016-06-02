@@ -6,6 +6,8 @@
  * Time: 17:40
  */
 
+namespace control;
+
 class ProjectManager
     {
     private $_db;

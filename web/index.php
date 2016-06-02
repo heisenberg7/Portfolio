@@ -6,9 +6,31 @@
  * Time: 16:32
  */
 
-// test db
-//$db = new PDO('mysql : host=localhost ; dbname=portfolio', 'root', '');
-//$manager = new ProjectManager($db);
+/*
+include ('../app/config/Db.php');
+
+use app\Db;
+$db = Db::getInstance();
+
+$testManager = new ProjectManager($db);
+$test = $testManager->getList();
+
+var_dump($test);
+*/
+
+
+/**********
+$controlProduits = new control\ControlProduit($db);
+
+
+$produits = $controlProduits->getProduitsPagination(1);
+$produitsCount = $controlProduits->getProduitsCount();
+$nbPage = ceil($produitsCount/$perPage);
+//
+
+$controlCategories = new control\ControlCategorie($db);
+$categories = $controlCategories->getCategories();
+ */
 ?>
 
 <!DOCTYPE html>
@@ -62,8 +84,8 @@
     <!-- Jumbotron -->
     <div class="jumbotron">
         <h1>Welcome !</h1>
-        <p class="lead">Bienvenue sur mon site perso qui vous présentera mes réalisations et vous donneras mes références. N'hésitez pas à me contacter via la partie contact pour plus d'infos me concernant ou au sujet de mes projets. Bonne visite !</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">en savoir +</a></p>
+        <p class="lead">Bienvenue sur mon site perso qui vous présentera mes réalisations et vous donneras mes références. N'hésitez pas à me contacter  pour plus d'infos me concernant ou sur mes projets. Bonne visite !</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Mes projets</a></p>
     </div>
 
     <!-- Example row of columns -->

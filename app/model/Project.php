@@ -6,6 +6,8 @@
  * Time: 16:33
  */
 
+namespace model;
+
 class Project {
 
     public $id;
