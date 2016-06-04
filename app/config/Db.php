@@ -6,23 +6,11 @@
  * Time: 15:46
  */
 
-/*
-try
-{
-    $db = new PDO('mysql:host=localhost;dbname=portfolio;charset=utf8', 'root', '');
-}
-catch (Exception $e)
-{
-    die('Erreur : ' . $e->getMessage());
-}
-?>
-*/
-
-namespace app;
+namespace config;
 
 /**
  * Class Db
- * @package app
+ * @package config
  */
 class Db
 {

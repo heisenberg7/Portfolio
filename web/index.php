@@ -6,17 +6,17 @@
  * Time: 16:32
  */
 
-/*
 include ('../app/config/Db.php');
+require_once("../app/control/ControlProject.php");
+use config\Db;
 
-use app\Db;
 $db = Db::getInstance();
 
-$testManager = new ProjectManager($db);
-$test = $testManager->getList();
+$testManager = new \control\ControlProject($db);
+$test = $testManager->getProjectId(1);
 
 var_dump($test);
-*/
+
 
 
 /**********

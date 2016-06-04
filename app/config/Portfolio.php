@@ -6,7 +6,7 @@
  * Time: 15:54
  */
 
-namespace app;
+namespace config;
 
 class Portfolio {
     const DBDSN = 'mysql:host=localhost;dbname=portfolio';

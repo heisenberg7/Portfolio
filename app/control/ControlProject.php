@@ -8,63 +8,89 @@
 
 namespace control;
 
-class ProjectManager
-    {
-    private $_db;
+use config\Db;
+use model\Project;
 
-    function __construct($db)
+/**
+ * Class ControlProject
+ * @package control
+ */
+class ControlProject
     {
-        $this->setDb($db);
+    /** @var \PDO */
+    private $db;
+
+    /**
+     * @param Db $db
+     */
+    public function __construct(Db $db)
+    {
+        if (!$db) throw new \InvalidArgumentException("First argument is expected to be a valid PDO instance, NULL given");
+        $this->db = $db->getPDOInstance();
     }
 
-    public function add(Project $project)
+    /**
+     * @param Project $project
+     * @return bool
+     */
+    public function addProject($project)
     {
-        $req = $this->_db_prepare('INSERT INTO project SET name = :name, description = :description, details = :details');
-
-        $req->bindValue(':name', $project->name());
-        $req->bindValue(':description',$project->description());
-        $req->bindValue(':details', $project->details);
-
+        $req = $this->db->prepare('INSERT INTO project values (null ,:name, :description, :details');
+        $req->bindValue(':name', $project->getName());
+        $req->bindValue(':description',$project->getDescription());
+        $req->bindValue(':details', $project->getDetails());
         $req->execute();
+        return $this->db->lastInsertId();
     }
 
-    public function delete(Project $project)
+    /**
+     * @param $id
+     * @return bool
+     */
+    public function deleteProject($id)
     {
-        $this->_db->exec('DELETE FROM project WHERE id = '.$project->id());
+        $req = $this->db->prepare('DELETE FROM project WHERE id=:id');
+        $req->bindValue(':id', $id);
+        return $req->execute();
     }
 
-    public function get($id){
-        $id = (int) $id;
-
-        $req = $this->_db->query('SELECT id, name, description, details FROM project WHERE id = .$id');
-        $data = $req->fetch(PDO::FETCH_ASSOC);
-
-        return new Project($data);
-    }
-
-    function getList()
+    /**
+     * @return array|bool
+     */
+    public function getProject()
     {
-        $projects = array();
-
-        $req = $this->_db->query('SELECT id, name, description, details FROM project ORDER BY name');
-
-        while ($data = $req->fetch(PDO::ASSOC))
-        {
-            $data[] = new Project($data);
+        $req = $this->db->prepare('SELECT * FROM project');
+        $req->execute();
+        $projects = false;
+        while($result = $req->fetch()){
+            $project = new Project($result);
+            $projects[] = $project;
         }
-
         return $projects;
     }
 
-    function update(Project $project)
+    public function getProjectId($id)
     {
-        $req = $this->_db->prepare('UPDATE project SET name = :name, description = :description, details = :details WHERE id = :id');
+        $req = $this->db->prepare('SELECT * FROM project where id = :id');
+        $req->bindValue(':id', $id);
+        $req->execute();
+        $projects = false;
+        /*if($result = $req->fetch()){
+            $project = new Project($result);
+            $projects = $project;
+        }*/
+        return $projects;
+    }
 
-        $req->bindValue(':name', $project->name());
-        $req->bindValue(':description',$project->description());
-        $req->bindValue(':details', $project->details());
-        $req->bindValue(':id', $project->id(), PDO::PARAM_INT);
-
+    /**
+     * @param $project
+     */
+    function update($project)
+    {
+        $req = $this->db->prepare('UPDATE project SET name = :name, description = :description, details = :details WHERE id = :id');
+        $req->bindValue(':name', $project->getName());
+        $req->bindValue(':description',$project->getDescription());
+        $req->bindValue(':details', $project->getDetails());
         $req->execute();
     }
 
