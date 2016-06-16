@@ -15,6 +15,19 @@ class Project {
     public $description;
     public $details;
 
+    public function __construct($array){
+        $this->hydrate($array);
+    }
+
+    public function hydrate(array $array){
+        foreach ($array as $cle => $valeur) {
+            $method = 'set' . ucfirst($cle);
+            if (method_exists($this, $method)) {
+                $this->$method($valeur);
+            }
+        }
+    }
+
     /**
      * @return mixed
      */
@@ -80,7 +93,4 @@ class Project {
     }
 
 
-    public function __construct(){
-
-    }
 }

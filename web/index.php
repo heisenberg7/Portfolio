@@ -13,7 +13,7 @@ use config\Db;
 $db = Db::getInstance();
 
 $testManager = new \control\ControlProject($db);
-$test = $testManager->getProjectId(1);
+$test = $testManager->getProject(1);
 
 var_dump($test);
 
@@ -23,10 +23,6 @@ var_dump($test);
 $controlProduits = new control\ControlProduit($db);
 
 
-$produits = $controlProduits->getProduitsPagination(1);
-$produitsCount = $controlProduits->getProduitsCount();
-$nbPage = ceil($produitsCount/$perPage);
-//
 
 $controlCategories = new control\ControlCategorie($db);
 $categories = $controlCategories->getCategories();

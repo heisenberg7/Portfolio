@@ -10,7 +10,6 @@ namespace control;
 
 use config\Db;
 use model\Project;
-
 /**
  * Class ControlProject
  * @package control
@@ -55,37 +54,25 @@ class ControlProject
     }
 
     /**
-     * @return array|bool
+     * @param $id
+     * @return bool|Project
      */
-    public function getProject()
+    public function getProject($id)
     {
-        $req = $this->db->prepare('SELECT * FROM project');
+        $req = $this->db->prepare('SELECT * FROM project WHERE id = :id');
+        $req->bindValue(':id', $id, FILTER_SANITIZE_NUMBER_INT);
         $req->execute();
-        $projects = false;
-        while($result = $req->fetch()){
+        $project = false;
+        if($result = $req->fetch()){
             $project = new Project($result);
-            $projects[] = $project;
         }
-        return $projects;
-    }
-
-    public function getProjectId($id)
-    {
-        $req = $this->db->prepare('SELECT * FROM project where id = :id');
-        $req->bindValue(':id', $id);
-        $req->execute();
-        $projects = false;
-        /*if($result = $req->fetch()){
-            $project = new Project($result);
-            $projects = $project;
-        }*/
-        return $projects;
+        return $project;
     }
 
     /**
      * @param $project
      */
-    function update($project)
+    function updateProject($project)
     {
         $req = $this->db->prepare('UPDATE project SET name = :name, description = :description, details = :details WHERE id = :id');
         $req->bindValue(':name', $project->getName());
