@@ -58,6 +58,7 @@
         </nav>
     </div>
 
+    
     <p>ici on affichera les projets</p>
 
     <!-- Site footer -->

@@ -11,7 +11,7 @@ require_once("../app/control/ControlProject.php");
 use config\Db;
 
 $db = Db::getInstance();
-
+/*
 $testManager = new \control\ControlProject($db);
 $test = $testManager->getProject(1);
 
