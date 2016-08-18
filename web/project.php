@@ -5,7 +5,13 @@
  * Date: 30/03/2016
  * Time: 15:30
  */
+use config\Db;
+use control\ControlProject;
 
+
+$project = new ControlProject($db);
+
+$this->$project->get
 
 
 ?>
@@ -58,7 +64,7 @@
         </nav>
     </div>
 
-    
+
     <p>ici on affichera les projets</p>
 
     <!-- Site footer -->
