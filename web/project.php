@@ -11,7 +11,9 @@ use control\ControlProject;
 
 $project = new ControlProject($db);
 
-$this->$project->get
+$this->$project->getProject(1);
+
+var_dump($project);
 
 
 ?>
